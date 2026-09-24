@@ -182,20 +182,20 @@
 
     try {
       console.log('⏳ Starting file processing...')
-      processingStatus = 'Initializing C2PA SDK...'
+      processingStatus = 'Preparing to check your file…'
       await new Promise(resolve => setTimeout(resolve, 100))
 
-      processingStatus = 'Fetching trust lists...'
+      processingStatus = 'Checking recognized credential providers…'
       await new Promise(resolve => setTimeout(resolve, 100))
 
-      processingStatus = 'Validating signatures...'
+      processingStatus = 'Checking who signed the Content Credentials…'
       if (testCertificates.length > 0) {
         console.log('⚠️  Using', testCertificates.length, 'test certificate(s)')
       }
 
       report = await processFile(file, testCertificates)
 
-      processingStatus = 'Building report...'
+      processingStatus = 'Preparing your summary…'
       await new Promise(resolve => setTimeout(resolve, 100))
 
       console.log('✅ File processed successfully:', report)
@@ -241,13 +241,13 @@
     usedTestCertificates = testCertificates.length > 0
 
     try {
-      processingStatus = 'Initializing C2PA SDK...'
+      processingStatus = 'Preparing to check your file…'
       await new Promise(resolve => setTimeout(resolve, 100))
 
-      processingStatus = 'Validating manifest against asset...'
+      processingStatus = 'Checking that the credentials match your file…'
       report = await processSidecarWithAsset(sidecar, asset, testCertificates)
 
-      processingStatus = 'Building report...'
+      processingStatus = 'Preparing your summary…'
       await new Promise(resolve => setTimeout(resolve, 100))
       console.log('✅ Sidecar+asset processed successfully:', report)
     } catch (err) {
@@ -769,7 +769,7 @@
           </div>
           <div class="text-center">
             <p class="text-xl font-semibold text-[#1e293b] dark:text-gray-100 mb-2">{processingStatus}</p>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Please wait while we validate your file</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Please wait while we check your Content Credentials</p>
           </div>
         </div>
       {/if}
