@@ -741,7 +741,7 @@
   {/if}
 
   {#if activeTab === 'summary'}
-    <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm overflow-hidden flex-1 flex flex-col min-h-0 mb-6">
+    <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm overflow-hidden flex-1 flex flex-col min-h-[32rem] mb-6">
       <OverviewPanel {report} {file} />
     </div>
   {:else if activeTab === 'crjson'}
