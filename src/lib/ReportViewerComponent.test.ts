@@ -14,6 +14,7 @@ describe('ReportViewer Component', () => {
     expect(queryByRole('button', { name: 'Report' })).toBeNull()
 
     fireEvent.click(getByRole('button', { name: 'Advanced' }))
+    expect(queryByRole('button', { name: 'Advanced' })).toBeNull()
     expect(getByRole('button', { name: 'Report' })).toBeTruthy()
     expect(getByRole('button', { name: 'crJSON' })).toBeTruthy()
     expect(getByRole('button', { name: 'Rubrics' })).toBeTruthy()

@@ -641,17 +641,6 @@
       >
         Summary
       </button>
-      <button
-        class="btn-outline-gray {advancedOpen ? 'is-selected' : ''}"
-        on:click={() => {
-          advancedOpen = !advancedOpen
-          if (!advancedOpen && activeTab !== 'summary') activeTab = 'summary'
-        }}
-        aria-expanded={advancedOpen}
-        aria-controls="advanced-report-sections"
-      >
-        Advanced
-      </button>
       {#if advancedOpen}
         <div id="advanced-report-sections" class="contents">
           <button
@@ -677,6 +666,15 @@
             Rubrics
           </button>
         </div>
+      {:else}
+        <button
+          class="btn-outline-gray"
+          on:click={() => advancedOpen = true}
+          aria-expanded="false"
+          aria-controls="advanced-report-sections"
+        >
+          Advanced
+        </button>
       {/if}
       <button
         class="btn btn-primary"
