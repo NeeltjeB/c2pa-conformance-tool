@@ -579,22 +579,22 @@
 
         <!-- Content Credential uses -->
         <div class="mb-6">
-          <div class="grid sm:grid-cols-3 gap-4">
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 backdrop-blur-sm">
+          <div class="grid sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div class="min-h-40 flex flex-col items-center justify-center bg-white dark:bg-gray-800 rounded-2xl p-4 backdrop-blur-sm">
                   <div class="flex justify-center text-3xl mb-2">
                     <!-- photo-search / inspect icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 8h.01" /><path d="M11 20h-4a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v4" /><path d="M4 15l4 -4c.928 -.893 2.072 -.893 3 0l3 3" /><path d="M14 14l1 -1c.617 -.593 1.328 -.793 2.009 -.598" /><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M20.2 20.2l1.8 1.8" /></svg>
                   </div>
                   <h4 class="font-semibold text-gray-900 dark:text-white">Inspect content to find out more about its history</h4>
                 </div>
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 backdrop-blur-sm">
+                <div class="min-h-40 flex flex-col items-center justify-center bg-white dark:bg-gray-800 rounded-2xl p-4 backdrop-blur-sm">
                   <div class="flex justify-center text-3xl mb-2">
                     <!-- clipboard-check icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 14l2 2l4 -4" /></svg>
                   </div>
                   <h4 class="font-semibold text-gray-900 dark:text-white">Test &amp; prepare for the C2PA Conformance Program</h4>
                 </div>
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 backdrop-blur-sm">
+                <div class="min-h-40 flex flex-col items-center justify-center bg-white dark:bg-gray-800 rounded-2xl p-4 backdrop-blur-sm">
                   <div class="flex justify-center text-3xl mb-2">
                     <!-- shield-check / trust icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" /><path d="M15 19l2 2l4 -4" /></svg>
