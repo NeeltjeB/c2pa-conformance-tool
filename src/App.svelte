@@ -595,7 +595,10 @@
                     <!-- clipboard-check icon -->
                     <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 14l2 2l4 -4" /></svg>
                   </div>
-                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Test &amp; prepare for the C2PA Conformance Program</h3>
+                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                    Test &amp; prepare for the
+                    <a href="https://c2pa.org/conformance" target="_blank" rel="noopener noreferrer" class="underline">C2PA Conformance Program</a>
+                  </h3>
                 </div>
                 <div class="min-h-40 flex flex-col items-center justify-center bg-white dark:bg-gray-800 rounded-2xl px-[20px] py-4 backdrop-blur-sm">
                   <div class="flex justify-center text-3xl mb-2">
