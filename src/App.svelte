@@ -449,12 +449,14 @@
                 class="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-gray-300 transition-colors duration-200 cursor-pointer"
                 aria-label="Return to home"
               >
+                <img src="/c2pa-verify-mark.svg" alt="" class="h-[38px] w-6 dark:invert" />
                 C2PA Verify
                 <span class="badge tracking-wide bg-gray-200 text-gray-700 dark:bg-blue-900/60 dark:text-blue-300">Beta</span>
               </button>
             </h1>
           {:else}
             <h1 class="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white">
+              <img src="/c2pa-verify-mark.svg" alt="" class="h-[38px] w-6 dark:invert" />
               C2PA Verify
               <span class="badge tracking-wide bg-gray-200 text-gray-700 dark:bg-blue-900/60 dark:text-blue-300">Beta</span>
             </h1>
@@ -566,7 +568,8 @@
       <!-- Hero Section -->
       <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 mt-10">
         <div class="mb-10">
-          <h2 class="text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-wide leading-tight">
+          <h2 class="inline-flex items-center justify-center gap-3 text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-wide leading-tight">
+            <img src="/cr-pin.svg" alt="" class="h-8 w-8 sm:h-10 sm:w-10 dark:invert" />
             Content Credentials
           </h2>
           <p class="text-lg text-gray-600 dark:text-gray-400 max-w-[52.5rem] mx-auto">
