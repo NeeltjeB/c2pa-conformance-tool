@@ -569,7 +569,7 @@
           <h2 class="text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-wide leading-tight">
             Content Credentials
           </h2>
-          <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p class="text-lg text-gray-600 dark:text-gray-400 max-w-[52.5rem] mx-auto">
             Content Credentials from the Coalition for Content Provenance and Authenticity (C2PA) function like a nutrition label for digital content including images, video, audio, and documents, giving a peek at the content's history available for anyone to access, at any time.
           </p>
         </div>
