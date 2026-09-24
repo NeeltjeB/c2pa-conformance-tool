@@ -4,6 +4,24 @@ import ReportViewer from './ReportViewer.svelte'
 import type { ConformanceReport } from './types'
 
 describe('ReportViewer Component', () => {
+  it('should reveal advanced tabs and return to the simplified Summary view', () => {
+    const mockReport: ConformanceReport = {
+      manifests: [{ label: 'active_manifest', assertions: {} }]
+    }
+
+    const { getByRole, queryByRole } = render(ReportViewer, { report: mockReport })
+
+    expect(queryByRole('button', { name: 'Report' })).toBeNull()
+
+    fireEvent.click(getByRole('button', { name: 'Advanced' }))
+    expect(getByRole('button', { name: 'Report' })).toBeTruthy()
+    expect(getByRole('button', { name: 'crJSON' })).toBeTruthy()
+    expect(getByRole('button', { name: 'Rubrics' })).toBeTruthy()
+
+    fireEvent.click(getByRole('button', { name: 'Summary' }))
+    expect(queryByRole('button', { name: 'Report' })).toBeNull()
+  })
+
   it('should render failures grouped by manifest in Validation Status Details', () => {
     const mockReport: ConformanceReport = {
       manifests: [
@@ -31,7 +49,8 @@ describe('ReportViewer Component', () => {
 
     const { container, getByText } = render(ReportViewer, { report: mockReport })
 
-    // Navigate to the Report tab (default is Summary)
+    // Reveal the advanced tabs, then navigate to Report (default is Summary).
+    fireEvent.click(getByText('Advanced'))
     fireEvent.click(getByText('Report'))
 
     const detailsSection = container.querySelector('#validation-status')
@@ -90,7 +109,8 @@ describe('ReportViewer Component', () => {
 
     const { container, getByText } = render(ReportViewer, { report: mockReport })
 
-    // Navigate to the Report tab (default is Summary)
+    // Reveal the advanced tabs, then navigate to Report (default is Summary).
+    fireEvent.click(getByText('Advanced'))
     fireEvent.click(getByText('Report'))
 
     const detailsSection = container.querySelector('#validation-status')

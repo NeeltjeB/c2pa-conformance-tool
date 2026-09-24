@@ -29,6 +29,7 @@
 
   type ReportTab = 'summary' | 'report' | 'crjson' | 'rubrics'
   let activeTab: ReportTab = 'summary'
+  let advancedOpen = false
 
   const tabHeadings: Record<ReportTab, { title: string; subtitle: string }> = {
     summary:  { title: 'Summary',            subtitle: '' },
@@ -632,33 +633,51 @@
     <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Report sections">
       <button
         class="btn-outline-gray {activeTab === 'summary' ? 'is-selected' : ''}"
-        on:click={() => activeTab = 'summary'}
+        on:click={() => {
+          activeTab = 'summary'
+          advancedOpen = false
+        }}
         aria-pressed={activeTab === 'summary'}
       >
         Summary
       </button>
       <button
-        class="btn-outline-gray {activeTab === 'report' ? 'is-selected' : ''}"
-        on:click={() => activeTab = 'report'}
-        aria-pressed={activeTab === 'report'}
+        class="btn-outline-gray {advancedOpen ? 'is-selected' : ''}"
+        on:click={() => {
+          advancedOpen = !advancedOpen
+          if (!advancedOpen && activeTab !== 'summary') activeTab = 'summary'
+        }}
+        aria-expanded={advancedOpen}
+        aria-controls="advanced-report-sections"
       >
-        Report
+        Advanced
       </button>
-      <button
-        class="btn-outline-gray {activeTab === 'crjson' ? 'is-selected' : ''}"
-        on:click={() => activeTab = 'crjson'}
-        aria-pressed={activeTab === 'crjson'}
-      >
-        crJSON
-      </button>
-      <button
-        class="btn-outline-gray {activeTab === 'rubrics' ? 'is-selected' : ''}"
-        on:click={() => activeTab = 'rubrics'}
-        title="Evaluate this manifest against selectable rubrics"
-        aria-pressed={activeTab === 'rubrics'}
-      >
-        Rubrics
-      </button>
+      {#if advancedOpen}
+        <div id="advanced-report-sections" class="contents">
+          <button
+            class="btn-outline-gray {activeTab === 'report' ? 'is-selected' : ''}"
+            on:click={() => activeTab = 'report'}
+            aria-pressed={activeTab === 'report'}
+          >
+            Report
+          </button>
+          <button
+            class="btn-outline-gray {activeTab === 'crjson' ? 'is-selected' : ''}"
+            on:click={() => activeTab = 'crjson'}
+            aria-pressed={activeTab === 'crjson'}
+          >
+            crJSON
+          </button>
+          <button
+            class="btn-outline-gray {activeTab === 'rubrics' ? 'is-selected' : ''}"
+            on:click={() => activeTab = 'rubrics'}
+            title="Evaluate this manifest against selectable rubrics"
+            aria-pressed={activeTab === 'rubrics'}
+          >
+            Rubrics
+          </button>
+        </div>
+      {/if}
       <button
         class="btn btn-primary"
         on:click={handleNewFile}
