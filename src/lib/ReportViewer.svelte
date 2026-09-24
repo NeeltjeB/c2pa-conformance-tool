@@ -678,7 +678,10 @@
       {:else}
         <button
           class="btn-outline-gray"
-          on:click={() => advancedOpen = true}
+          on:click={() => {
+            advancedOpen = true
+            activeTab = 'report'
+          }}
           aria-expanded="false"
           aria-controls="advanced-report-sections"
         >

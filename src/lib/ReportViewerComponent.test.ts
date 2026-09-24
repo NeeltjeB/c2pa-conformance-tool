@@ -4,7 +4,7 @@ import ReportViewer from './ReportViewer.svelte'
 import type { ConformanceReport } from './types'
 
 describe('ReportViewer Component', () => {
-  it('should reveal advanced tabs and return to the simplified Summary view', () => {
+  it('should open Report with the advanced tabs and return to the simplified Summary view', () => {
     const mockReport: ConformanceReport = {
       manifests: [{ label: 'active_manifest', assertions: {} }]
     }
@@ -20,6 +20,7 @@ describe('ReportViewer Component', () => {
     expect(getByRole('button', { name: 'Report' })).toBeTruthy()
     expect(getByRole('button', { name: 'crJSON' })).toBeTruthy()
     expect(getByRole('button', { name: 'Rubrics' })).toBeTruthy()
+    expect(getByRole('button', { name: 'Report' }).getAttribute('aria-pressed')).toBe('true')
 
     fireEvent.click(getByRole('button', { name: 'Back to simple view' }))
     expect(queryByRole('button', { name: 'Report' })).toBeNull()
