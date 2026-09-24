@@ -72,7 +72,7 @@
   <div
     role="group"
     aria-label={cardAccessibleLabel}
-    class="relative rounded-2xl overflow-hidden border-2 transition-all w-[300px]
+    class="relative rounded-2xl overflow-hidden border-[3px] transition-all w-[300px]
       {node.isStub
         ? 'border-dashed border-gray-300 dark:border-gray-600 cursor-default'
         : 'border-blue-500 shadow-lg cursor-default'}"
@@ -194,7 +194,7 @@
           {d}
           fill="none"
           stroke="currentColor"
-          stroke-width="1.5"
+          stroke-width="3"
           stroke-linecap="round"
           stroke-dasharray={node.children[i]?.isStub ? '5 4' : undefined}
         />
