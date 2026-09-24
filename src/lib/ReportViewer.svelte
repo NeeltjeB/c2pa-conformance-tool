@@ -31,7 +31,7 @@
   let activeTab: ReportTab = 'summary'
 
   const tabHeadings: Record<ReportTab, { title: string; subtitle: string }> = {
-    summary:  { title: 'Overview',           subtitle: 'Content Credentials summary' },
+    summary:  { title: 'Summary',            subtitle: 'Content Credentials summary' },
     report:   { title: 'Conformance Report', subtitle: 'Manifest validation details' },
     crjson:   { title: 'crJSON Output',      subtitle: 'crJSON-formatted validation results' },
     rubrics:  { title: 'Asset Rubrics',      subtitle: 'Check crJSON against rubrics' },
