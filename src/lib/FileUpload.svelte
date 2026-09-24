@@ -102,10 +102,10 @@
         </div>
       </div>
       <p class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-4">
-        {dragOver ? 'Drop it here!' : 'Drop a file or click to browse'}
+        {dragOver ? 'Drop it here!' : 'Drag & drop a file or click to browse'}
       </p>
       <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-        Supports images, videos, audio, PDFs, and standalone <code class="font-mono text-sm">.c2pa</code> sidecar files
+        Supports images, videos, audio, PDFs and more
       </p>
 
       <!-- File type badges -->
