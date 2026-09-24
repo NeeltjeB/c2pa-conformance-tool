@@ -19,8 +19,9 @@ describe('ReportViewer Component', () => {
     expect(getByRole('button', { name: 'crJSON' })).toBeTruthy()
     expect(getByRole('button', { name: 'Rubrics' })).toBeTruthy()
 
-    fireEvent.click(getByRole('button', { name: 'Summary' }))
+    fireEvent.click(getByRole('button', { name: 'Back to simple view' }))
     expect(queryByRole('button', { name: 'Report' })).toBeNull()
+    expect(getByRole('button', { name: 'Summary' })).toBeTruthy()
   })
 
   it('should render failures grouped by manifest in Validation Status Details', () => {

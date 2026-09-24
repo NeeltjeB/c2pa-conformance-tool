@@ -632,14 +632,21 @@
     </div>
     <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Report sections">
       <button
-        class="btn-outline-gray {activeTab === 'summary' ? 'is-selected' : ''}"
+        class="btn-outline-gray {!advancedOpen && activeTab === 'summary' ? 'is-selected' : ''}"
         on:click={() => {
           activeTab = 'summary'
           advancedOpen = false
         }}
-        aria-pressed={activeTab === 'summary'}
+        aria-pressed={!advancedOpen && activeTab === 'summary'}
       >
-        Summary
+        {#if advancedOpen}
+          <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 6l-6 6l6 6" />
+          </svg>
+          Back to simple view
+        {:else}
+          Summary
+        {/if}
       </button>
       {#if advancedOpen}
         <div id="advanced-report-sections" class="contents">
