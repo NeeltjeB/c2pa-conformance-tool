@@ -31,7 +31,7 @@
   let activeTab: ReportTab = 'summary'
 
   const tabHeadings: Record<ReportTab, { title: string; subtitle: string }> = {
-    summary:  { title: 'Summary',            subtitle: 'Content Credentials summary' },
+    summary:  { title: 'Summary',            subtitle: '' },
     report:   { title: 'Conformance Report', subtitle: 'Manifest validation details' },
     crjson:   { title: 'crJSON Output',      subtitle: 'crJSON-formatted validation results' },
     rubrics:  { title: 'Asset Rubrics',      subtitle: 'Check crJSON against rubrics' },
@@ -625,7 +625,9 @@
   <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
     <div>
       <h2 class="text-xl font-semibold text-[#1e293b] dark:text-white">{heading.title}</h2>
-      <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{heading.subtitle}</p>
+      {#if heading.subtitle}
+        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{heading.subtitle}</p>
+      {/if}
     </div>
     <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Report sections">
       <button
