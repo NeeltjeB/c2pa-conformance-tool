@@ -52,10 +52,7 @@
     return colWidths.map(w => {
       const cx = x + w / 2    // child x (center of this column)
       x += w
-      return {
-        d: `M ${px} 0 C ${px} ${mid}, ${cx} ${mid}, ${cx} ${CONN_H}`,
-        childX: cx,
-      }
+      return `M ${px} 0 C ${px} ${mid}, ${cx} ${mid}, ${cx} ${CONN_H}`
     })
   })()
 
@@ -192,24 +189,26 @@
       class="mt-2 flex-shrink-0 overflow-visible text-gray-300 dark:text-gray-500"
       aria-hidden="true"
     >
-      {#each connPaths as connector, i}
+      {#each connPaths as d, i}
         <path
-          d={connector.d}
+          {d}
           fill="none"
           stroke="currentColor"
           stroke-width="3"
           stroke-linecap="round"
           stroke-dasharray={node.children[i]?.isStub ? '5 4' : undefined}
         />
+      {/each}
+      {#if connPaths.length > 0}
         <path
-          d={`M ${connector.childX - 6} ${CONN_H - 7} L ${connector.childX} ${CONN_H} L ${connector.childX + 6} ${CONN_H - 7}`}
+          d={`M ${connW / 2 - 6} 7 L ${connW / 2} 0 L ${connW / 2 + 6} 7`}
           fill="none"
           stroke="currentColor"
           stroke-width="3"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
-      {/each}
+      {/if}
     </svg>
 
     <!-- Children row — no individual stems, the SVG handles the full span -->
