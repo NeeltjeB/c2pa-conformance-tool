@@ -108,14 +108,6 @@
         Supports images, videos, audio, PDFs and more
       </p>
 
-      <!-- File type badges -->
-      <div class="flex items-center justify-center gap-2 mt-6 flex-wrap">
-        <span class="px-4 py-1 bg-gray-100 group-hover:bg-white dark:group-hover:bg-gray-600 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-semibold transition duration-200">Images</span>
-        <span class="px-4 py-1 bg-gray-100 group-hover:bg-white dark:group-hover:bg-gray-600 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-semibold transition duration-200">Videos</span>
-        <span class="px-4 py-1 bg-gray-100 group-hover:bg-white dark:group-hover:bg-gray-600 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-semibold transition duration-200">Audio</span>
-        <span class="px-4 py-1 bg-gray-100 group-hover:bg-white dark:group-hover:bg-gray-600 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-semibold transition duration-200">PDFs</span>
-        <span class="px-4 py-1 bg-gray-100 group-hover:bg-white dark:group-hover:bg-gray-600 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-semibold transition duration-200">.c2pa sidecars</span>
-      </div>
     </div>
 
     <input
