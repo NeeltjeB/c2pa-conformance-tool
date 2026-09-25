@@ -40,6 +40,7 @@
   }
 
   const CONN_H = 56 // height of the connector SVG
+  const STEM_H = 14 // straight section below the parent before connectors branch
 
   // One cubic-bezier path per child. Vertical tangents at both ends produce
   // smooth S-curves (or a straight line when child is directly below parent).
@@ -52,7 +53,7 @@
     return colWidths.map(w => {
       const cx = x + w / 2    // child x (center of this column)
       x += w
-      return `M ${px} 0 C ${px} ${mid}, ${cx} ${mid}, ${cx} ${CONN_H}`
+      return `M ${px} ${STEM_H} C ${px} ${mid}, ${cx} ${mid}, ${cx} ${CONN_H}`
     })
   })()
 
@@ -189,6 +190,15 @@
       class="mt-2 flex-shrink-0 overflow-visible text-gray-300 dark:text-gray-500"
       aria-hidden="true"
     >
+      {#if connPaths.length > 0}
+        <path
+          d={`M ${connW / 2} 0 L ${connW / 2} ${STEM_H}`}
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+      {/if}
       {#each connPaths as d, i}
         <path
           {d}
