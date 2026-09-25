@@ -800,7 +800,7 @@
       {#if report}
         <div
           bind:this={resultsRegion}
-          class="focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-inset"
+          class="flex-1 flex flex-col min-h-0 focus:outline-none"
           role="region"
           aria-label="Validation results"
           tabindex="-1"
