@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher, onDestroy } from 'svelte'
+  import { createEventDispatcher, onDestroy, tick } from 'svelte'
   import ManifestSummary from './ManifestSummary.svelte'
   import RubricsPanel from './RubricsPanel.svelte'
   import OverviewPanel from './OverviewPanel.svelte'
@@ -30,6 +30,8 @@
   type ReportTab = 'summary' | 'report' | 'crjson' | 'rubrics'
   let activeTab: ReportTab = 'summary'
   let advancedOpen = false
+  let advancedButton: HTMLButtonElement
+  let reportTabButton: HTMLButtonElement
 
   const tabHeadings: Record<ReportTab, { title: string; subtitle: string }> = {
     summary:  { title: 'Summary',            subtitle: '' },
@@ -526,6 +528,20 @@
     fileInput?.click()
   }
 
+  async function openAdvanced() {
+    advancedOpen = true
+    activeTab = 'report'
+    await tick()
+    reportTabButton?.focus()
+  }
+
+  async function closeAdvanced() {
+    activeTab = 'summary'
+    advancedOpen = false
+    await tick()
+    advancedButton?.focus()
+  }
+
   function handleFileInput(event: Event) {
     const target = event.target as HTMLInputElement
     const files = target.files
@@ -641,6 +657,7 @@
       {#if advancedOpen}
         <div id="advanced-report-sections" class="contents">
           <button
+            bind:this={reportTabButton}
             class="btn-outline-gray {activeTab === 'report' ? 'is-selected' : ''}"
             on:click={() => activeTab = 'report'}
             aria-pressed={activeTab === 'report'}
@@ -665,10 +682,7 @@
         </div>
         <button
           class="btn-outline-gray"
-          on:click={() => {
-            activeTab = 'summary'
-            advancedOpen = false
-          }}
+          on:click={closeAdvanced}
         >
           <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M15 6l-6 6l6 6" />
@@ -677,11 +691,9 @@
         </button>
       {:else}
         <button
+          bind:this={advancedButton}
           class="btn-outline-gray"
-          on:click={() => {
-            advancedOpen = true
-            activeTab = 'report'
-          }}
+          on:click={openAdvanced}
           aria-expanded="false"
           aria-controls="advanced-report-sections"
         >

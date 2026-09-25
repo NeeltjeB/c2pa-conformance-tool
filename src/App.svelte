@@ -449,14 +449,14 @@
                 class="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-gray-300 transition-colors duration-200 cursor-pointer"
                 aria-label="Return to home"
               >
-                <img src="/c2pa_icon.svg" alt="" class="h-9 w-9 dark:invert" />
+                <img src="{import.meta.env.BASE_URL}c2pa_icon.svg" alt="" class="h-9 w-9 dark:invert" />
                 C2PA Verify
                 <span class="badge tracking-wide bg-gray-200 text-gray-700 dark:bg-blue-900/60 dark:text-blue-300">Beta</span>
               </button>
             </h1>
           {:else}
             <h1 class="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
-              <img src="/c2pa_icon.svg" alt="" class="h-9 w-9 dark:invert" />
+              <img src="{import.meta.env.BASE_URL}c2pa_icon.svg" alt="" class="h-9 w-9 dark:invert" />
               C2PA Verify
               <span class="badge tracking-wide bg-gray-200 text-gray-700 dark:bg-blue-900/60 dark:text-blue-300">Beta</span>
             </h1>
@@ -569,7 +569,7 @@
       <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 mt-10">
         <div class="mb-10">
           <h2 class="inline-flex items-center justify-center gap-3 text-2xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-wide leading-tight">
-            <img src="/content_credentials_icon.svg" alt="" class="h-7 w-auto sm:h-10 dark:invert" />
+            <img src="{import.meta.env.BASE_URL}content_credentials_icon.svg" alt="" class="h-7 w-auto sm:h-10 dark:invert" />
             Content Credentials
           </h2>
           <p class="text-lg text-gray-600 dark:text-gray-400 max-w-[52.5rem] mx-auto">

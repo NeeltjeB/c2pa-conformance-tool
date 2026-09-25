@@ -4,7 +4,7 @@ import ReportViewer from './ReportViewer.svelte'
 import type { ConformanceReport } from './types'
 
 describe('ReportViewer Component', () => {
-  it('should open Report with the advanced tabs and return to the simplified Summary view', () => {
+  it('should open Report with the advanced tabs and return focus to the simplified Summary view', async () => {
     const mockReport: ConformanceReport = {
       manifests: [{ label: 'active_manifest', assertions: {} }]
     }
@@ -13,7 +13,7 @@ describe('ReportViewer Component', () => {
 
     expect(queryByRole('button', { name: 'Report' })).toBeNull()
 
-    fireEvent.click(getByRole('button', { name: 'Advanced' }))
+    await fireEvent.click(getByRole('button', { name: 'Advanced' }))
     expect(queryByRole('button', { name: 'Advanced' })).toBeNull()
     expect(getByRole('button', { name: 'Summary' })).toBeTruthy()
     expect(getByRole('button', { name: 'Exit advanced view' })).toBeTruthy()
@@ -21,10 +21,12 @@ describe('ReportViewer Component', () => {
     expect(getByRole('button', { name: 'crJSON' })).toBeTruthy()
     expect(getByRole('button', { name: 'Rubrics' })).toBeTruthy()
     expect(getByRole('button', { name: 'Report' }).getAttribute('aria-pressed')).toBe('true')
+    expect(document.activeElement).toBe(getByRole('button', { name: 'Report' }))
 
-    fireEvent.click(getByRole('button', { name: 'Exit advanced view' }))
+    await fireEvent.click(getByRole('button', { name: 'Exit advanced view' }))
     expect(queryByRole('button', { name: 'Report' })).toBeNull()
     expect(getByRole('button', { name: 'Summary' })).toBeTruthy()
+    expect(document.activeElement).toBe(getByRole('button', { name: 'Advanced' }))
   })
 
   it('should render failures grouped by manifest in Validation Status Details', () => {
